@@ -23,7 +23,7 @@ window.onload = function(){
 
 async function getCategories(){
     try{
-        const response = await fetch('../asset/data/categories.json');
+        const response = await fetch('../data/categories.json');
         const data = await response.json();
         const categories = data.categories
 
