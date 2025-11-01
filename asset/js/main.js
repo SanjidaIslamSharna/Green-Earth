@@ -23,7 +23,7 @@ window.onload = function(){
 
 async function getCategories(){
     try{
-        const response = await fetch('../asset/data/categories.json');
+        const response = await fetch('https://sanjidaislamsharna.github.io/Green-Earth/asset/data/categories.json');
         const data = await response.json();
         const categories = data.categories
 
@@ -41,7 +41,7 @@ async function getCategories(){
 
 async function getPlantByCategory(categoryName){
     try{
-        const response = await fetch(`../asset/data/allplants.json`);
+        const response = await fetch(`https://sanjidaislamsharna.github.io/Green-Earth/asset/data/allplants.json`);
         const data = await response.json();
         const plants = data.plants;
 
@@ -74,7 +74,7 @@ async function getPlantByCategory(categoryName){
 
 async function loadAllPlants() {
     try{
-        const response = await fetch('../asset/data/allplants.json');
+        const response = await fetch('https://sanjidaislamsharna.github.io/Green-Earth/asset/data/allplants.json');
         const data = await response.json();
         const plants = data.plants;
 
@@ -104,9 +104,15 @@ async function loadAllPlants() {
 }
 
 
+document.getElementById('donateForm').addEventListener('submit', function(e) {
+  e.preventDefault(); // stop actual form submit
+  document.getElementById('message').classList.remove('hidden');
+  document.getElementById('donateForm').reset();
+});
+
 async function getPlantDetails(id){
     try{
-        const response = await fetch(`../asset/data/allplants.json`);
+        const response = await fetch(`https://sanjidaislamsharna.github.io/Green-Earth/asset/data/allplants.json`);
         const data = await response.json();
         const plant = data.plants;
 
@@ -187,3 +193,7 @@ function setActive(element) {
             updateCartUI();
         }
     }
+
+
+
+    
